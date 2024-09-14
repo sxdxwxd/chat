@@ -17,24 +17,4 @@ online chat
 
 总体来说，该项目结合了 Web 开发、实时通信和模块化设计，适合构建实时聊天应用或其他需要实时数据交换的应用。
 
-#项目架构
-project-root/
-├── public/
-│   ├── css/
-│   │   ├── style.css         # 样式表
-│   │   └── themes.css         # 样式表，包含主题切换的样式
-│   │
-│   ├── js/
-│   │   ├── message.js        # 聊天功能的 JavaScript 文件
-│   │   ├── video.js          # 视频和音频通话功能的 JavaScript 文件
-│   │   ├── themes.js         # 主题切换功能的 JavaScript 文件
-│   │   └── notifications.js  # 通知功能的 JavaScript 文件
-│   │
-│   └── index.html            # 主 HTML 文件
-│
-├── server/
-│   ├── chatServer.js         # 处理聊天相关的 Socket.io 逻辑
-│   └── p2pServer.js          # 处理 P2P 相关的 WebSocket 逻辑
-│
-├── server.js                 # 主服务器入口文件
-└── README.md                 # 项目说明文件
+https://wxdwuxd.oss-cn-beijing.aliyuncs.com/07e38a30b30f41b40ea42478b4c0b95.png
