@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私聊</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/themes.css" rel="stylesheet">
+</head>
+<body class="theme-default">
+<div class="max-w-full md:max-w-7xl mx-auto py-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div class="chat-container bg-white flex-1 p-6 rounded-lg shadow-lg" id="chat-container">
+        <div class="chat-header text-xl font-semibold mb-4 text-center">聊天室</div>
+        <select id="themeSelector" class="mt-4" aria-label="选择主题">
+            <option value="theme-default">默认主题</option>
+<!--            <option value="theme-dark">深色主题</option>-->
+            <option value="theme-light">浅色主题</option>
+        </select>
+        <div id="messages" class="messages overflow-y-scroll h-72 border border-gray-300 rounded-lg p-4 mb-4 bg-gray-50">
+        </div>
+        <div class="input-container flex flex-col space-y-2">
+            <div class="flex items-center space-x-2">
+                <input type="text" id="msg-input" class="flex-1 p-2 border border-gray-300 rounded-lg" placeholder="请输入信息" />
+                <label for="file-upload" class="file-upload-label text-gray-500 cursor-pointer px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">
+                    <i class="fa fa-paperclip"></i> 上传文件
+                </label>
+                <input type="file" id="file-upload" style="display: none;" />
+                <button onclick="sendBtn()" class="px-4 py-2 rounded-lg button">发送</button>
+            </div>
+            <div>
+                <button onclick="toggleMoreOptions()" class="button text-gray-700 px-4 py-2 rounded-lg ">更多</button>
+                <div id="moreOptions" class="hidden mt-2 flex justify-center space-x-4">
+                    <button onclick="startVideoCall()" class="button px-4 py-2 rounded-lg ">视频通话</button>
+                    <button onclick="startVoiceCall()" class="button px-4 py-2 rounded-lg 0">音频通话</button>
+                </div>
+            </div>
+        </div>
+        <div id="videoContainer" class="video-container flex justify-around items-center mt-4 hidden">
+            <video id="localVideo" class="w-1/2 rounded-lg bg-black" autoplay playsinline></video>
+            <video id="remoteVideo" class="w-1/2 rounded-lg bg-black" autoplay playsinline></video>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+<script src="js/message.js"></script>
+<script src="js/video.js"></script>
+<script src="js/themes.js"></script>
+<script src="js/notifications.js"></script>
+</body>
+</html>

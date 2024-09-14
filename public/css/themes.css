@@ -1,0 +1,88 @@
+/* Default Theme */
+.theme-default {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --button-bg: #4CAF50;  /* 绿色 */
+    --button-hover-bg: #45a049;  /* 深绿色 */
+    --select-bg: #eccdcd;
+    --select-text-color:#ffffff;
+}
+
+/*!* Dark Theme *!*/
+/*.theme-dark {*/
+/*    --bg-color: #040b18; !* 深色背景 *!*/
+/*    --text-color: #ffffff; !* 白色字体 *!*/
+/*    --button-bg: #6200ea;  !* 紫色 *!*/
+/*    --button-hover-bg: #3700b3; !* 深紫色 *!*/
+/*}*/
+
+/* Light Theme */
+.theme-light {
+    --bg-color: #fafafa; /* 浅色背景 */
+    --text-color: #333333; /* 深灰色字体 */
+    --button-bg: #f0f0f0; /* 灰色按钮 */
+    --button-hover-bg: #e0e0e0; /* 深灰色按钮 */
+    --select-bg: #afcece;
+    --select-text-color:#ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#themeSelector {
+    background-color: var(--select-bg);
+    color: var(--select-text-color);
+}
+
+option {
+    background-color: var(--select-bg);
+    color: var(--select-text-color);
+}
+
+/* 按钮的样式 */
+button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* 其他需要变动的元素 */
+.chat-header {
+    color: var(--text-color);
+}
+
+.input-container input {
+    border-color: var(--text-color);
+}
+
+.messages {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.message {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.message-sent {
+    transform: translateX(25px);
+}
+
+.message-received {
+    transform: translateX(-25px);
+}
+
+.message-enter-active {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.message-enter-to {
+    opacity: 1;
+    transform: translateY(0);
+}
